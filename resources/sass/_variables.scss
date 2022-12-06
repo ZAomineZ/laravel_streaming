@@ -1,0 +1,18 @@
+:root {
+    --body-bg: #FCFCFC;
+    --secondary-font: "Roboto";
+    --strong-weight: 600;
+    --typography-color: #555;
+    --primary-color: #816bab;
+    --primary-hover: #674e96;
+    --primary-dark: #523c7f;
+    --dark-color: #343a40;
+    --component-color: var(--dark-color);
+    --headlines-color: #1c1c1c;
+    --form-gutter: 1.25rem;
+    --form-border: 1px solid rgba(0, 0, 0, 0.1);
+    --form-radius: 5px;
+    --form-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+    --form-height: 2.5rem;
+    --form-padding: 0.9375rem;
+}

@@ -1,0 +1,17 @@
+.form__ui input:not(.btn) {
+    background-color: #ffffff;
+    color: var(--typography-color);
+    margin-bottom: var(--form-gutter);
+    border: var(--form-border);
+    border-radius: var(--form-radius);
+    font-size: 15px;
+    box-shadow: var(--form-shadow);
+    display: block;
+    height: var(--form-height);
+    padding-right: var(--form-padding);
+    padding-left: var(--form-padding);
+}
+
+.form__ui input:not([class*=col-]):not(.btn) {
+    width: 100%;
+}

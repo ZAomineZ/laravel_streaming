@@ -1,0 +1,9 @@
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown.active,
+.dropdown:hover {
+    z-index: 999;
+}

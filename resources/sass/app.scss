@@ -1,0 +1,94 @@
+@import "variables";
+
+*, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    background: var(--body-bg);
+    font-family: var(--secondary-font);
+    color: var(--typography-color);
+    position: relative;
+}
+
+article, aside, footer, header, nav, section, figcaption, figure, main {
+    display: block;
+}
+
+hr, .hr {
+    display: block;
+    background: rgba(0, 0, 0, .15);
+    height: 1px;
+    overflow: visible;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: var(--secondary-font);
+    font-size: .875rem;
+    line-height: 1;
+    margin: 0;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a, a:hover, a:focus, a:active, button, button:hover, button:focus, button:active {
+   outline: 0 dotted transparent;
+}
+
+img {
+    border-style: none;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul, ol, dl {
+    display: block;
+    padding: 0 0 0 15px;
+    margin: auto auto 30px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--secondary-font);
+    font-weight: var(--strong-weight);
+    color: var(--headlines-color);
+    margin: 0 auto;
+}
+
+h2, .h2 {
+    font-size: 1.563rem;
+}
+
+.container,
+.container__xl,
+.container__fluid {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1200px;
+}
+
+// Elements
+@import "elements/header";
+@import "elements/form";
+// Components
+@import "components/dropdown";
+@import "components/slider";
