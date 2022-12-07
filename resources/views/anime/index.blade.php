@@ -92,25 +92,25 @@
     </div>
     <div class="container page__content">
         <div class="row">
-            @for($i = 0; $i < 16; $i++)
+            @foreach($animes as $anime)
                 <div class="col_12 col_m_6 col_l_3 media__block">
-                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
+                    <a href="#" class="image" style="background-image: url('{{ $anime->cover_image }}')">
                         <i class="fa fa-thin fa-play"></i>
                     </a>
                     <div class="info">
                         <a href="#">
-                            <h3>One Piece</h3>
+                            <h3>{{ $anime->title }}</h3>
                         </a>
                         <a href="#">
-                            <h4>Episode: 800</h4>
+                            <h4>Launch Date: {{ $anime->year() }}</h4>
                         </a>
                     </div>
                     <a href="#" class="rating">
                         <span>Rating</span>
-                        9.0
+                        {{ $anime->score }}
                     </a>
                 </div>
-            @endfor
+            @endforeach
         </div>
         <ul class="pagination separate">
             <li>

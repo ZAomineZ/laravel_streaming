@@ -5,38 +5,30 @@
         <div class="container page__content">
             <div class="row">
                 <div class="sidebar__widget col_12 col_m_4">
-                    <a href="#" class="poster"
-                       style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-15.png')">
+                    <a href="{{ route('animes.video', [$anime->slug]) }}" class="poster"
+                       style="background-image: url('{{ $anime->cover_image }}')">
                         <i class="fa fa-thin fa-play"></i>
                     </a>
                     <ul class="media__info">
                         <li>
-                            Launch Date :
-                            <span>4/2017</span>
+                            Score :
+                            <span>{{ $anime->score }}/5</span>
                         </li>
                         <li>
-                            Launch Date :
-                            <span>4/2017</span>
+                            Format :
+                            <span>{{ $anime->format }}</span>
                         </li>
                         <li>
-                            Launch Date :
-                            <span>4/2017</span>
+                            Status :
+                            <span>{{ $anime->status }}</span>
                         </li>
                         <li>
-                            Launch Date :
-                            <span>4/2017</span>
+                            Episodes :
+                            <span>{{ $anime->episodes }}</span>
                         </li>
                         <li>
-                            Launch Date :
-                            <span>4/2017</span>
-                        </li>
-                        <li>
-                            Launch Date :
-                            <span>4/2017</span>
-                        </li>
-                        <li>
-                            Launch Date :
-                            <span>4/2017</span>
+                            Diffusion :
+                            <span>{{ $anime->date() }} - {{ $anime->date('aired_to') }}</span>
                         </li>
                     </ul>
                     <h3 class="area__title">Related Manga</h3>
@@ -61,16 +53,16 @@
                 </div>
                 <div class="col_12 col_m_8 col_auto">
                     <div class="media__title">
-                        <h1>Boruto Naruto Next Generations</h1>
+                        <h1>{{ $anime->title }}</h1>
                         <h3>
                             Anime Status :
-                            <span class="secondary__color">On Going</span>
+                            <span class="secondary__color">{{ $anime->status }}</span>
                         </h3>
                     </div>
                     <div class="media__statistic">
                         <h4>
                             <i class="fa fa-thin fa-backward"></i>
-                            05/?
+                            {{ $anime->episodes }}
                             <span>Episode’s</span>
                         </h4>
                         <h4>
@@ -87,14 +79,7 @@
                     <div class="media__story">
                         <h3>The Story Line</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
-                            ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo.
+                            {{ $anime->description }}
                         </p>
                     </div>
                     <div class="related__head">
@@ -104,81 +89,35 @@
                         <div class="slider__medias">
                             <div class="slider__medias_inner">
                                 <div class="slider slider__horizontal slider__header row">
-                                    <div class="media__block col_12 col_m_6 col_l_3 slider__item">
-                                        <a href="#" class="image"
-                                           style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                            <i class="fa fa-thin fa-play"></i>
-                                        </a>
-                                        <div class="info">
-                                            <a href="#">
-                                                <h3>One Piece</h3>
+                                    @foreach($animesRelated as $anime)
+                                        <div class="media__block col_12 col_m_6 col_l_3 slider__item">
+                                            <a href="#" class="image"
+                                               style="background-image: url('{{ $anime->cover_image }}')">
+                                                <i class="fa fa-thin fa-play"></i>
                                             </a>
-                                            <a href="#">
-                                                <h4>Episode: 800</h4>
-                                            </a>
-                                        </div>
-                                        <a href="#" class="rating">
-                                            <span>Rating</span>
-                                            9.0
-                                        </a>
-                                    </div>
-                                    <div class="media__block col_12 col_m_6 col_l_3 slider__item">
-                                        <a href="#" class="image"
-                                           style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                            <i class="fa fa-thin fa-play"></i>
-                                        </a>
-                                        <div class="info">
-                                            <a href="#">
-                                                <h3>One Piece</h3>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Episode: 800</h4>
+                                            <div class="info">
+                                                <a href="#">
+                                                    <h3>{{ $anime->title }}</h3>
+                                                </a>
+                                                <a href="#">
+                                                    <h4>Launch Date: {{ $anime->year() }}</h4>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="rating">
+                                                <span>Rating</span>
+                                                {{ $anime->score }}
                                             </a>
                                         </div>
-                                        <a href="#" class="rating">
-                                            <span>Rating</span>
-                                            9.0
-                                        </a>
-                                    </div>
-                                    <div class="media__block col_12 col_m_6 col_l_3 slider__item">
-                                        <a href="#" class="image"
-                                           style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                            <i class="fa fa-thin fa-play"></i>
-                                        </a>
-                                        <div class="info">
-                                            <a href="#">
-                                                <h3>One Piece</h3>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Episode: 800</h4>
-                                            </a>
-                                        </div>
-                                        <a href="#" class="rating">
-                                            <span>Rating</span>
-                                            9.0
-                                        </a>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tags">
                         <h3 class="area__title">Tags</h3>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
-                        <a href="#" class="tag__btn">Manga</a>
+                        @foreach($anime->genres->pluck('name') as $genre)
+                            <a href="#" class="tag__btn">{{ $genre }}</a>
+                        @endforeach
                     </div>
                     <div class="area__head">
                         <h2 class="area__title">

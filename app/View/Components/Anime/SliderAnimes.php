@@ -6,18 +6,23 @@ namespace App\View\Components\Anime;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 final class SliderAnimes extends Component
 {
+    public Collection $animes;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        Collection $animes
+    )
     {
-        //
+        $this->animes = $animes;
     }
 
     /**

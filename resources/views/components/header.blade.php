@@ -55,7 +55,7 @@
     @if(Route::currentRouteName() === "home")
         <div class="container medias__anime_header">
             <h2 class="title__vertical">F e a t u r e d</h2>
-            <x-anime.slider-animes/>
+            <x-anime.slider-animes :animes="$animes"/>
         </div>
     @endif
 </div>

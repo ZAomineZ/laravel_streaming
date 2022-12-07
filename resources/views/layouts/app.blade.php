@@ -20,16 +20,17 @@
     @vite(['resources/sass/app.scss'])
 </head>
 <body>
-<x-header/>
+<x-header :animes="$animesHeader"/>
 @yield('content')
 <x-footer/>
 <script>
     let sliderAnimes = document.querySelectorAll('.slider__animes')
     sliderAnimes.forEach(item => {
         let totalSliderAnimes = 9
-        let valuePerSlide = 6.25
 
         let slider = item.querySelector('.slider')
+        let valuePerSlide = parseFloat(slider.dataset.valuePerSlide) ?? 6.25
+
         let buttonPrev = item.querySelector('button[data-controls="prev"]')
         let buttonNext = item.querySelector('button[data-controls="next"]')
 

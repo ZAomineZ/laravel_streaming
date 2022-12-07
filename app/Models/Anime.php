@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Attributes\AnimeAttributes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Anime extends Model
 {
-    use HasFactory;
+    use HasFactory, AnimeAttributes;
 
     protected $table = "animes";
 
@@ -22,8 +23,13 @@ class Anime extends Model
         return $this->belongsToMany(Genre::class);
     }
 
-    public function episodes(): HasMany
+    public function episodesList(): HasMany
     {
         return $this->hasMany(Episodes::class);
+    }
+
+    public function episodeCurrent(int $episode)
+    {
+        return $this->episodesList()->where('episode', '=', $episode)->first();
     }
 }

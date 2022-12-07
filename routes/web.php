@@ -19,7 +19,7 @@ Route::get('/', HomeController::class)
     ->name('home');
 Route::get('/animes', [AnimeController::class, 'index'])
     ->name('anime.index');
-Route::get('/animes/details', [AnimeController::class, 'details'])
+Route::get('/anime/{slug}/details', [AnimeController::class, 'details'])
     ->name('anime.details');
-Route::get('/animes/video', [AnimeController::class, 'show'])
+Route::get('/anime/{slug}/video', [AnimeController::class, 'show'])
     ->name('animes.video');
