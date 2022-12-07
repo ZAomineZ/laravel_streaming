@@ -1,4 +1,5 @@
-.form__ui input:not(.btn) {
+.form__ui input:not(.btn),
+.form__ui textarea {
     background-color: #ffffff;
     color: var(--typography-color);
     margin-bottom: var(--form-gutter);
@@ -12,6 +13,19 @@
     padding-left: var(--form-padding);
 }
 
-.form__ui input:not([class*=col-]):not(.btn) {
+.form__ui input:not([class*=col-]):not(.btn),
+.form__ui textarea:not([class*=col_]) {
     width: 100%;
+}
+
+.form__ui.large input:not(.btn) {
+    height: var(--form-height);
+    padding-right: var(--form-padding-large);
+    padding-left: var(--form-padding-large);
+}
+
+.form__ui textarea {
+    height: var(--form-height);
+    padding: calc(var(--form-padding) / 1.5) var(--form-padding);
+    line-height: var(--line-height);
 }

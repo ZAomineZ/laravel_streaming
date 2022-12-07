@@ -104,3 +104,135 @@
         background: #fcfcfc;
     }
 }
+
+.media__details {
+    position: relative;
+
+    .page__content {
+        position: static;
+    }
+}
+
+.media__info {
+    font-size: 15px;
+    line-height: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: 10px 20px;
+        color: var(--gray-color);
+        font-weight: var(--strong-weight);
+        margin: 0;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    li span {
+        color: var(--secondary-color);
+    }
+}
+
+.media__title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    max-width: 400px;
+
+    h1 {
+        font-size: 1.375rem;
+        line-height: 1.5;
+        font-weight: var(--strong-weight);
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        color: var(--gray-color);
+        line-height: 1.5;
+        font-weight: 400;
+    }
+}
+
+.media__statistic {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 10px;
+
+    h4 {
+        position: relative;
+        padding: 25px 20px;
+        font-size: 1.9rem;
+        text-align: center;
+        line-height: 1;
+        font-weight: var(--normal-weight);
+        color: inherit;
+        text-transform: uppercase;
+    }
+
+    h4 span {
+        display: block;
+        font-size: 1.125rem;
+        margin-top: 5px;
+    }
+
+    h4 i:before {
+        position: absolute;
+        font-size: 60px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: .1;
+    }
+}
+
+.media__story {
+    padding-top: 40px;
+
+    h3 {
+        font-size: 1.375rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+.media__player {
+    margin-bottom: 30px !important;
+
+    .episodes__list {
+        background: var(--primary-color);
+        border-top: 1px solid #ffffff;
+    }
+
+    .episodes__list .episodes a {
+        display: block;
+        padding: 0 20px;
+        font-size: 15px;
+        line-height: 42px;
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 1200px) {
+    .media__statistic {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        padding: 5px 50px;
+        border-radius: 150px 0 0 150px;
+    }
+}

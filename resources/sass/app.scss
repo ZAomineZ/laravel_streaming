@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 14px;
+    line-height: var(--line-height);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -27,6 +34,15 @@ hr, .hr {
 
 button, input {
     overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button, input, optgroup, select, textarea {
@@ -72,12 +88,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 0 auto;
 }
 
+h1, .h1 {
+    font-size: 1.813rem;
+}
+
 h2, .h2 {
     font-size: 1.563rem;
 }
 
 h3, .h3 {
     font-size: 1.375rem;
+}
+
+h4, .h4 {
+    font-size: 1.25rem;
 }
 
 p {
@@ -87,6 +111,10 @@ p {
 
 b, strong {
     font-weight: var(--strong-weight);
+}
+
+audio, video {
+    display: inline-block;
 }
 
 .container,
@@ -104,6 +132,18 @@ b, strong {
     max-width: 1200px;
 }
 
+@media (min-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
 // Elements
 @import "elements/header";
 @import "elements/footer";
@@ -112,8 +152,12 @@ b, strong {
 @import "elements/content";
 @import "elements/column";
 @import "elements/animes";
+@import "elements/button";
+@import "elements/color";
 // Components
 @import "components/dropdown";
 @import "components/slider";
 @import "components/subscribe";
 @import "components/pagination";
+@import "components/comments";
+@import "components/scroll";

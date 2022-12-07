@@ -1,0 +1,35 @@
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 var(--form-padding);
+    height: var(--form-height);
+    line-height: var(--form-height);
+    color: var(--typography-color);
+    font-weight: var(--strong-weight);
+    text-align: center;
+    border-radius: var(--form-radius);
+    border: 0;
+    font-size: 14px;
+
+    &.rounded {
+        border-radius: 50px;
+    }
+
+    &.large {
+        height: var(--form-height);
+        line-height: var(--form-height);
+        font-size: 1rem;
+    }
+
+    &.secondary {
+        background: var(--secondary-color);
+        color: #ffffff;
+        box-shadow: none var(--secondary-color);
+    }
+
+    &.primary {
+        background: var(--primary-color);
+        color: #ffffff;
+        box-shadow: none var(--primary-color);
+    }
+}

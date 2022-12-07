@@ -14,4 +14,14 @@ final class AnimeController extends Controller
     {
         return view('anime.index');
     }
+
+    public function details(): Factory|View|Application
+    {
+        return view('anime.details');
+    }
+
+    public function show(): Factory|View|Application
+    {
+        return view('anime.show');
+    }
 }

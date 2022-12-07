@@ -53,6 +53,41 @@
                 Advanced Search
                 <i class="fa fa-thin fa-chevron-down"></i>
             </h2>
+            <form action="#" class="container form__ui large advanced__search_form">
+                <div class="row align_center_x">
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4">
+                        <input type="text" name="keywords" placeholder="Search Keywords">
+                    </div>
+                    <div class="col_12 col_m_6 col_l_4 buttons">
+                        <button class="btn secondary rounded large">Reset</button>
+                        <input type="submit" value="Search" role="button" class="btn primary rounded large">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div class="container page__content">

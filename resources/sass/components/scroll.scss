@@ -1,0 +1,38 @@
+.scroll__custom {
+    overflow: visible !important;
+    position: relative;
+}
+
+.scroll__custom_wrap {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+
+    .scroll__custom_content {
+        position: relative;
+        overflow: auto;
+        width: calc(100% + 18px);
+        height: 100%;
+        right: 0;
+    }
+}
+
+.scroll__custom_track {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 9px;
+    cursor: default;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.scroll__bar {
+    position: relative;
+    background: var(--secondary-color);
+    width: 100%;
+    right: 0;
+    z-index: 0;
+    transition: background .1s;
+}
