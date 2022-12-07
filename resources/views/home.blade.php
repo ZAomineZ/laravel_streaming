@@ -8,10 +8,18 @@
                     Top Rated Animes
                 </h2>
             </div>
-            <div class="slider__animes grid__mode">
+            <div class="slider__animes slider__animes_outer grid__mode">
+                <div class="slider__controls">
+                    <button type="button" data-controls="prev">
+                        <i class="fa fa-thin fa-chevron-left"></i>
+                    </button>
+                    <button type="button" data-controls="next">
+                        <i class="fa fa-thin fa-chevron-right"></i>
+                    </button>
+                </div>
                 <div class="slider__medias">
                     <div class="slider__medias_inner">
-                        <div class="slider slider__horizontal slider__body row">
+                        <div class="slider slider__horizontal slider__body row" style="transform: translate3d(0%, 0px, 0px)">
                             <div class="media__block col_12 col_m_6 col_l_3 slider__item">
                                 <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
                                     <i class="fa fa-thin fa-play"></i>

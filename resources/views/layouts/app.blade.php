@@ -9,7 +9,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
@@ -19,122 +20,44 @@
     @vite(['resources/sass/app.scss'])
 </head>
 <body>
-    <div class="home__header">
-        <header class="header">
-            <div class="container">
-                <form action="#" class="form__ui search__box">
-                    <input type="text" placeholder="Write Search anime...">
-                    <button class="search__btn">
-                        <i class="fa fa-light fa-magnifying-glass"></i>
-                    </button>
-                </form>
-                <a href="#" class="logo">
-                    <img src="{{ asset('img/logo.png') }}" alt="">
-                </a>
-                <div class="action__btns">
-                    <div class="dropdown">
-                        <a href="#" class="dropdown__btn icon__btn">
-                            <i class="fa fa-thin fa-user"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="container navigation__menu">
-                <ul>
-                    <li>
-                        <a href="#">
-                            Home Page
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Online Anime
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Anime Ovas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Online Movies
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-        @if(Route::currentRouteName() === "home")
-            <div class="container medias__anime_header">
-                <h2 class="title__vertical">F e a t u r e d</h2>
-                <div class="slider__animes">
-                    <div class="slider__medias">
-                        <div class="slider__medias_inner">
-                            <div class="slider slider__horizontal slider__header">
-                                <div class="media__block slider__item">
-                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                        <i class="fa fa-thin fa-play"></i>
-                                    </a>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h3>One Piece</h3>
-                                        </a>
-                                        <a href="#">
-                                            <h4>Episode: 800</h4>
-                                        </a>
-                                    </div>
-                                    <a href="#" class="rating">
-                                        <span>Rating</span>
-                                        9.0
-                                    </a>
-                                </div>
-                                <div class="media__block slider__item">
-                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                        <i class="fa fa-thin fa-play"></i>
-                                    </a>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h3>One Piece</h3>
-                                        </a>
-                                        <a href="#">
-                                            <h4>Episode: 800</h4>
-                                        </a>
-                                    </div>
-                                    <a href="#" class="rating">
-                                        <span>Rating</span>
-                                        9.0
-                                    </a>
-                                </div>
-                                <div class="media__block slider__item">
-                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
-                                        <i class="fa fa-thin fa-play"></i>
-                                    </a>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h3>One Piece</h3>
-                                        </a>
-                                        <a href="#">
-                                            <h4>Episode: 800</h4>
-                                        </a>
-                                    </div>
-                                    <a href="#" class="rating">
-                                        <span>Rating</span>
-                                        9.0
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
-    </div>
-    @yield('content')
-    <div class="copyrights">
-        <div class="container">
-            <p>all copyrights reserved for Animtora | Online Anime and Manga Community</p>
-        </div>
-    </div>
+<x-header/>
+@yield('content')
+<x-footer/>
+<script>
+    let sliderAnimes = document.querySelectorAll('.slider__animes')
+    sliderAnimes.forEach(item => {
+        let totalSliderAnimes = 9
+        let valuePerSlide = 6.25
+
+        let slider = item.querySelector('.slider')
+        let buttonPrev = item.querySelector('button[data-controls="prev"]')
+        let buttonNext = item.querySelector('button[data-controls="next"]')
+
+        buttonNext?.addEventListener('click', function (e) {
+            let transform = getTransform(slider)
+            console.log(transform)
+            let newTransform = transform - valuePerSlide
+
+            slider.style.transform = `translate3d(${newTransform}%, 0px, 0px)`
+        })
+        buttonPrev?.addEventListener('click', function (e) {
+            let transform = getTransform(slider)
+            let newTransform = transform + valuePerSlide
+
+            slider.style.transform = `translate3d(${newTransform}%, 0px, 0px)`
+        })
+    })
+
+    function getTransform(slider) {
+        let transform = slider.style.transform
+        let partsTransform = transform.split('translate3d(').filter(s => s.length !== 0)
+        transform = partsTransform[0] ?? ""
+        transform = transform.replace(", 0px, 0px)", "")
+        transform = parseFloat(transform)
+
+        return transform
+    }
+</script>
+@yield('scripts')
 </body>
 </html>

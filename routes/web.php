@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
-Route::get('/animes', [AnimeController::class, 'index']);
-Route::get('/animes/details', [AnimeController::class, 'details']);
-Route::get('/animes/video', [AnimeController::class, 'show']);
+Route::get('/', HomeController::class)
+    ->name('home');
+Route::get('/animes', [AnimeController::class, 'index'])
+    ->name('anime.index');
+Route::get('/animes/details', [AnimeController::class, 'details'])
+    ->name('anime.details');
+Route::get('/animes/video', [AnimeController::class, 'show'])
+    ->name('animes.video');

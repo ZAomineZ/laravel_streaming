@@ -76,6 +76,17 @@
         position: relative;
     }
 
+    .header .dropdown .dropdown__list {
+        left: auto;
+        right: 0;
+    }
+
+    .header .dropdown .dropdown__list:before,
+    .header .dropdown .dropdown__list:after {
+        left: auto;
+        right: 12px;
+    }
+
     .search__box.form__ui input {
         margin-bottom: 0;
         background: rgba(0, 0, 0, .3);
@@ -123,6 +134,10 @@
         margin-left: 10px;
         position: relative;
         color: #ffffff;
+    }
+
+    .header .action__btns .icon__btn:hover {
+        background: var(--primary-color);
     }
 
     .header .navigation__menu {
