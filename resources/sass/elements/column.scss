@@ -1,0 +1,32 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col_12 {
+    width: 100%;
+}
+
+.row>[class*=col_],
+.row>[class*=box_] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.align_center_y {
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .col_m_6 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col_l_3 {
+        width: 25%;
+    }
+}

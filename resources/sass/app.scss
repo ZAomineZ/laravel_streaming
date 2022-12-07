@@ -60,6 +60,11 @@ ul, ol, dl {
     margin: auto auto 30px;
 }
 
+ul li, ol li, dl li {
+    font-size: .9375rem;
+    margin-bottom: 5px;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: var(--secondary-font);
     font-weight: var(--strong-weight);
@@ -69,6 +74,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 h2, .h2 {
     font-size: 1.563rem;
+}
+
+h3, .h3 {
+    font-size: 1.375rem;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+b, strong {
+    font-weight: var(--strong-weight);
 }
 
 .container,
@@ -88,7 +106,14 @@ h2, .h2 {
 
 // Elements
 @import "elements/header";
+@import "elements/footer";
 @import "elements/form";
+@import "elements/media";
+@import "elements/content";
+@import "elements/column";
+@import "elements/animes";
 // Components
 @import "components/dropdown";
 @import "components/slider";
+@import "components/subscribe";
+@import "components/pagination";

@@ -1,3 +1,106 @@
 .media__block {
     position: relative;
+
+    &:not(.slider__item) {
+        margin-bottom: 30px;
+    }
+
+    .image {
+        display: block;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-bottom: 150%;
+        position: relative;
+    }
+
+    .image i:before {
+        display: block;
+        width: 42px;
+        height: 42px;
+        line-height: 40px;
+        background: var(--secondary-color);
+        font-size: 1rem;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .image i:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 100%;
+        background: linear-gradient(transparent, #000);
+        z-index: 1;
+    }
+
+    .info {
+        position: absolute;
+        z-index: 2;
+        padding: 1rem;
+        color: #ffffff;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+    }
+
+    .info h3,
+    .info h4 {
+        font-size: 1rem;
+        color: #ffffff;
+        line-height: 1;
+    }
+
+    .info h3 {
+        padding-bottom: 7px;
+        border-bottom: 1px solid #ffffff;
+        display: inline-block;
+        max-width: 100%;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .rating  {
+        width: 90px;
+        height: 92px;
+        top: 0;
+        left: 15px;
+        color: #ffffff;
+        background-size: 100% auto;
+        font-size: 1.625rem;
+        line-height: 1;
+        padding-top: 15px;
+        padding-left: 10px;
+        position: absolute;
+        z-index: 3;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4OXB4IiBoZWlnaHQ9IjkycHgiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0icmdiYSgwLDAsMCwwLjcpIiBkPSJNODkuMDAwLC0wLjAwMSBDODkuMDAwLC0wLjAwMSA3OS4zNTksMzQuNjk2IDU3LjIxNCw1Ny41ODcgQzM0Ljg2MCw4MC42OTUgLTAuMDAwLDkxLjk5OSAtMC4wMDAsOTEuOTk5IEwtMC4wMDAsLTAuMDAxIEw4OS4wMDAsLTAuMDAxIFoiLz48L3N2Zz4=);
+    }
+
+    .rating span {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+}
+
+.media__section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #ffffff;
+
+    &.light__gray {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        background: #fcfcfc;
+    }
 }

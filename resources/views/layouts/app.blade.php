@@ -65,21 +65,75 @@
                 </ul>
             </div>
         </header>
-        <div class="container medias__anime_header">
-            <h2 class="title__vertical">F e a t u r e d</h2>
-            <div class="slider__animes">
-                <div class="slider__medias">
-                    <div class="slider__medias_inner">
-                        <div class="slider slider__horizontal slider__header">
-                            <div class="media__block slider__item">
-                                <a href="#"></a>
-                                <div class="info"></div>
-                                <a href="#" class="rating"></a>
+        @if(Route::currentRouteName() === "home")
+            <div class="container medias__anime_header">
+                <h2 class="title__vertical">F e a t u r e d</h2>
+                <div class="slider__animes">
+                    <div class="slider__medias">
+                        <div class="slider__medias_inner">
+                            <div class="slider slider__horizontal slider__header">
+                                <div class="media__block slider__item">
+                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
+                                        <i class="fa fa-thin fa-play"></i>
+                                    </a>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h3>One Piece</h3>
+                                        </a>
+                                        <a href="#">
+                                            <h4>Episode: 800</h4>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="rating">
+                                        <span>Rating</span>
+                                        9.0
+                                    </a>
+                                </div>
+                                <div class="media__block slider__item">
+                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
+                                        <i class="fa fa-thin fa-play"></i>
+                                    </a>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h3>One Piece</h3>
+                                        </a>
+                                        <a href="#">
+                                            <h4>Episode: 800</h4>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="rating">
+                                        <span>Rating</span>
+                                        9.0
+                                    </a>
+                                </div>
+                                <div class="media__block slider__item">
+                                    <a href="#" class="image" style="background-image: url('https://phenixthemes.com/frontdemo/animtora/img/image-2.png')">
+                                        <i class="fa fa-thin fa-play"></i>
+                                    </a>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h3>One Piece</h3>
+                                        </a>
+                                        <a href="#">
+                                            <h4>Episode: 800</h4>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="rating">
+                                        <span>Rating</span>
+                                        9.0
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        @endif
+    </div>
+    @yield('content')
+    <div class="copyrights">
+        <div class="container">
+            <p>all copyrights reserved for Animtora | Online Anime and Manga Community</p>
         </div>
     </div>
 </body>

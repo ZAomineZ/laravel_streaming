@@ -207,6 +207,32 @@
         position: relative;
         direction: ltr;
     }
+
+    .medias__anime_header .media__block .image i:before {
+        bottom: 20px;
+        right: 20px;
+        top: auto;
+        background: var(--primary-color);
+    }
+
+    .medias__anime_header .media__block .info {
+        padding: 30px;
+        left: 0;
+        right: 0;
+    }
+
+    .medias__anime_header .media__block .info h3 {
+        font-size: 1.125rem;
+    }
+
+    .medias__anime_header .media__block .rating {
+        left: 0;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4OXB4IiBoZWlnaHQ9IjkycHgiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0icmdiYSh2YXIoLS1zZWNvbmRhcnktY29sb3IpLCAwLjk4KSIgZD0iTTg5LjAwMCwtMC4wMDEgQzg5LjAwMCwtMC4wMDEgNzkuMzU5LDM0LjY5NiA1Ny4yMTQsNTcuNTg3IEMzNC44NjAsODAuNjk1IC0wLjAwMCw5MS45OTkgLTAuMDAwLDkxLjk5OSBMLTAuMDAwLC0wLjAwMSBMODkuMDAwLC0wLjAwMSBaIi8+PC9zdmc+);
+    }
+}
+
+.home__header + .media__section {
+    padding-top: 30px;
 }
 
 @media screen and (min-width: 1600px) {

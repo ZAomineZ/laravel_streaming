@@ -1,0 +1,65 @@
+.section__filter {
+    padding-top: 30px;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+
+    .sorting__by, .sorting__alphabet {
+        font-size: 1.063rem;
+        line-height: 1.063rem;
+        color: #7a7a7b;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sorting__alphabet {
+        margin-bottom: 25px;
+    }
+
+    .sorting__by li, .sorting__alphabet li {
+        padding: 0 15px;
+        margin-bottom: 5px;
+    }
+
+    .sorting__alphabet li {
+        padding: 0;
+    }
+
+    .sorting__alphabet li a {
+        padding: 0 10px;
+    }
+
+    .sorting__by li:not(:last-child), .sorting__alphabet li:not(:last-child) {
+        border-right: 1px solid #c7c7c7;
+    }
+
+    .sorting__by li a, .sorting__alphabet li a {
+        color: inherit;
+        transition: all .3s linear;
+    }
+
+    .advanced__search {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .advanced__search h2 {
+        font-size: 1rem;
+        line-height: 52px;
+        border-bottom: 1px solid rgba(0, 0 ,0, .1);
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .advanced__search h2 i {
+        padding: 0 5px;
+        font-size: 14px;
+        position: relative;
+        top: -3px;
+        display: inline-block;
+        vertical-align: middle;
+        transition: all .3s linear;
+    }
+}
