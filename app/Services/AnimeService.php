@@ -46,7 +46,7 @@ final class AnimeService implements AnimeContract
 
     public function getByGenreName(?string $genreName = null, ?Builder $builder = null): Builder
     {
-        return $this->animeRepository->findByGenreName($genreName);
+        return $this->animeRepository->findByGenreName($genreName, $builder);
     }
 
     public function getByFormat(?string $format = null, ?Builder $builder = null): Builder

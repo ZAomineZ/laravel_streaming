@@ -46,7 +46,7 @@ final class AnimeRepository extends BaseRepository implements AnimeContract
 
     public function findByGenreName(?string $nameGenre = null, ?Builder $builder = null): Builder
     {
-        $query = $queryBuilder ?? $this->anime->newQuery();
+        $query = $builder ?? $this->anime->newQuery();
         return $query
             ->whereHas('genres', function ($q) use ($nameGenre) {
                 $q->where('name', '=', $nameGenre);

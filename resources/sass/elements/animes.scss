@@ -23,6 +23,10 @@
         margin-bottom: 5px;
     }
 
+    .sorting__by li a.active, .sorting__alphabet li a.active {
+        color: var(--primary-color) !important;
+    }
+
     .sorting__alphabet li {
         padding: 0;
     }

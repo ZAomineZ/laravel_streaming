@@ -5,13 +5,19 @@
         <div class="container">
             <ul class="reset__block sorting__by">
                 <li>
-                    <a href="{{ route('anime.index', ['sort_title' => 'A-Z']) }}">Sort By A-Z</a>
+                    <a href="{{ route('anime.index', ['sort_title' => 'A-Z']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'A-Z' ? 'active' : '' }}">Sort
+                        By A-Z</a>
                 </li>
                 <li>
-                    <a href="{{ route('anime.index', ['sort' => 'rating']) }}">Sort By Rating</a>
+                    <a href="{{ route('anime.index', ['sort' => 'rating']) }}"
+                       class="{{ isset($query['sort']) && $query['sort'] === 'rating' ? 'active' : '' }}">Sort By
+                        Rating</a>
                 </li>
                 <li>
-                    <a href="{{ route('anime.index', ['sort' => 'newest']) }}">Sort By Newest Anime</a>
+                    <a href="{{ route('anime.index', ['sort' => 'newest']) }}"
+                       class="{{ isset($query['sort']) && $query['sort'] === 'newest' ? 'active' : '' }}">Sort By Newest
+                        Anime</a>
                 </li>
             </ul>
             <ul class="reset__block sorting__alphabet">
@@ -19,33 +25,84 @@
                     <a href="#">ALL</a>
                 </li>
                 <li>
-                    <a href="{{ route('anime.index', ['sort_title' => '#']) }}">#</a>
+                    <a href="{{ route('anime.index', ['sort_title' => '#']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === '#' ? 'active' : '' }}">#</a>
                 </li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'A']) }}">A</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'B']) }}">B</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'C']) }}">C</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'D']) }}">D</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'E']) }}">E</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'F']) }}">F</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'G']) }}">G</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'H']) }}">H</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'J']) }}">J</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'K']) }}">K</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'L']) }}">L</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'M']) }}">M</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'N']) }}">N</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'O']) }}">O</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'P']) }}">P</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'Q']) }}">Q</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'R']) }}">R</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'S']) }}">S</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'T']) }}">T</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'U']) }}">U</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'V']) }}">V</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'W']) }}">W</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'X']) }}">X</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'Y']) }}">Y</a></li>
-                <li><a href="{{ route('anime.index', ['sort_title' => 'Z']) }}">Z</a></li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'A']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'A' ? 'active' : '' }}">A</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'B']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'B' ? 'active' : '' }}">B</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'C']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'C' ? 'active' : '' }}">C</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'D']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'D' ? 'active' : '' }}">D</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'E']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'E' ? 'active' : '' }}">E</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'F']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'F' ? 'active' : '' }}">F</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'G']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'G' ? 'active' : '' }}">G</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'H']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'H' ? 'active' : '' }}">H</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'J']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'J' ? 'active' : '' }}">J</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'K']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'K' ? 'active' : '' }}">K</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'L']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'L' ? 'active' : '' }}">L</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'M']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'M' ? 'active' : '' }}">M</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'N']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'N' ? 'active' : '' }}">N</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'O']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'O' ? 'active' : '' }}">O</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'P']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'P' ? 'active' : '' }}">P</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'Q']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'Q' ? 'active' : '' }}">Q</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'R']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'R' ? 'active' : '' }}">R</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'S']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'S' ? 'active' : '' }}">S</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'T']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'T' ? 'active' : '' }}">T</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'U']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'U' ? 'active' : '' }}">U</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'V']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'V' ? 'active' : '' }}">V</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'W']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'W' ? 'active' : '' }}">W</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'X']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'X' ? 'active' : '' }}">X</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'Y']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'Y' ? 'active' : '' }}">Y</a>
+                </li>
+                <li><a href="{{ route('anime.index', ['sort_title' => 'Z']) }}"
+                       class="{{ isset($query['sort_title']) && $query['sort_title'] === 'Z' ? 'active' : '' }}">Z</a>
+                </li>
             </ul>
         </div>
         <div class="advanced__search">
@@ -56,14 +113,16 @@
             <form action="#" class="container form__ui large advanced__search_form" id="advanced__search_form">
                 <div class="row align_center_x">
                     <div class="col_12 col_m_6 col_l_4">
-                        <input type="text" name="search_anime" placeholder="Search Anime (title)">
+                        <input type="text" name="search_anime" placeholder="Search Anime (title)"
+                               value="{{ $query['search_anime'] ?? '' }}">
                     </div>
                     <div class="col_12 col_m_6 col_l_4">
                         <select name="format" id="search_type" style="display: none">
-                            <option value="">Anime Format</option>
+                            <option value="{{ $query['format'] ?? '' }}">Anime Format</option>
                         </select>
                         <div class="select__custom">
-                            <div class="select__custom_option form_control large">Anime Format</div>
+                            <div
+                                class="select__custom_option form_control large">{{ $query['format'] ?? 'Anime Format' }}</div>
                             <i class="select__custom_icon">
                                 @include('icons.ArrowDown')
                             </i>
@@ -80,10 +139,11 @@
                     </div>
                     <div class="col_12 col_m_6 col_l_4">
                         <select name="status" id="search_type" style="display: none">
-                            <option value="">Anime Status</option>
+                            <option value="{{ $query['status'] ?? '' }}">Anime Status</option>
                         </select>
                         <div class="select__custom">
-                            <div class="select__custom_option form_control large">Anime Status</div>
+                            <div
+                                class="select__custom_option form_control large">{{ $query['status'] ?? 'Anime Status' }}</div>
                             <i class="select__custom_icon">
                                 @include('icons.ArrowDown')
                             </i>
@@ -96,10 +156,11 @@
                     </div>
                     <div class="col_12 col_m_6 col_l_6">
                         <select name="year" id="search_type" style="display: none">
-                            <option value="">Anime Years</option>
+                            <option value="{{ $query['year'] ?? '' }}">Anime Years</option>
                         </select>
                         <div class="select__custom">
-                            <div class="select__custom_option form_control large">Anime Years</div>
+                            <div
+                                class="select__custom_option form_control large">{{ $query['year'] ?? 'Anime Years' }}</div>
                             <i class="select__custom_icon">
                                 @include('icons.ArrowDown')
                             </i>
@@ -112,10 +173,11 @@
                     </div>
                     <div class="col_12 col_m_6 col_l_6">
                         <select name="genre" id="search_type" style="display: none">
-                            <option value="">Anime Genres</option>
+                            <option value="{{ $query['genre'] ?? '' }}">Anime Genres</option>
                         </select>
                         <div class="select__custom">
-                            <div class="select__custom_option form_control large">Anime Genres</div>
+                            <div
+                                class="select__custom_option form_control large">{{ $query['genre'] ?? 'Anime Genres' }}</div>
                             <i class="select__custom_icon">
                                 @include('icons.ArrowDown')
                             </i>
@@ -127,7 +189,8 @@
                         </div>
                     </div>
                     <div class="col_12 col_m_6 col_l_4 buttons">
-                        <button class="btn secondary rounded large">Reset</button>
+                        <input class="btn secondary rounded large" value="Reset" role="button" type="submit"
+                               name="reset"/>
                         <input type="submit" value="Search" role="button" class="btn primary rounded large">
                     </div>
                 </div>
@@ -138,7 +201,8 @@
         <div class="row">
             @foreach($animes as $anime)
                 <div class="col_12 col_m_6 col_l_3 media__block">
-                    <a href="#" class="image" style="background-image: url('{{ $anime->cover_image }}')">
+                    <a href="{{ route('anime.details', [$anime->slug]) }}" class="image"
+                       style="background-image: url('{{ $anime->cover_image }}')">
                         <i class="fa fa-thin fa-play"></i>
                     </a>
                     <div class="info">
@@ -156,7 +220,7 @@
                 </div>
             @endforeach
         </div>
-        {{ $animes->links('vendor.pagination.animes-pagination', ['animes' => $animes]) }}
+        {{ $animes->withQueryString()->links('vendor.pagination.animes-pagination', ['animes' => $animes]) }}
     </div>
 @endsection
 

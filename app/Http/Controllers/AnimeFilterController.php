@@ -8,9 +8,6 @@ use App\Models\Anime;
 use App\Services\AnimeService;
 use App\Services\GenreService;
 use App\Traits\Controller\AnimeFilter;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 final class AnimeFilterController extends Controller
@@ -24,11 +21,15 @@ final class AnimeFilterController extends Controller
     {
     }
 
-    public function __invoke(Request $request): Factory|View|Application
+    public function __invoke(Request $request)
     {
         $query = $request->query() ?? [];
 
         $search = $query['search_anime'] ?? "";
+
+        if (isset($query['reset'])) {
+            return redirect()->route('anime.index');
+        }
 
         $queryBuilder = null;
         $perPage = 20;
@@ -63,15 +64,13 @@ final class AnimeFilterController extends Controller
         }
 
         if (null === $queryBuilder) {
-            $queryBuilder = $this->animeService
-                ->getTopRated();
+            $queryBuilder = $this->animeService->getTopRated();
         }
 
-        $animes = $queryBuilder
-            ->paginate($perPage);
+        $animes = $queryBuilder->paginate($perPage);
         $years = $this->animeService->groupYears();
         $genres = $this->genreService->groupNames();
 
-        return view('anime.index', compact('animes', 'years', 'genres'));
+        return view('anime.index', compact('animes', 'years', 'genres', 'query'));
     }
 }
