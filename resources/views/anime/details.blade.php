@@ -89,23 +89,23 @@
                         <div class="slider__medias">
                             <div class="slider__medias_inner">
                                 <div class="slider slider__horizontal slider__header row">
-                                    @foreach($animesRelated as $anime)
+                                    @foreach($animesRelated as $animeR)
                                         <div class="media__block col_12 col_m_6 col_l_3 slider__item">
-                                            <a href="#" class="image"
-                                               style="background-image: url('{{ $anime->cover_image }}')">
+                                            <a href="{{ route('anime.details', [$animeR->slug]) }}" class="image"
+                                               style="background-image: url('{{ $animeR->cover_image }}')">
                                                 <i class="fa fa-thin fa-play"></i>
                                             </a>
                                             <div class="info">
-                                                <a href="#">
-                                                    <h3>{{ $anime->title }}</h3>
+                                                <a href="{{ route('anime.details', [$animeR->slug]) }}">
+                                                    <h3>{{ $animeR->title }}</h3>
                                                 </a>
                                                 <a href="#">
-                                                    <h4>Launch Date: {{ $anime->year() }}</h4>
+                                                    <h4>Launch Date: {{ $animeR->year() }}</h4>
                                                 </a>
                                             </div>
                                             <a href="#" class="rating">
                                                 <span>Rating</span>
-                                                {{ $anime->score }}
+                                                {{ $animeR->score }}
                                             </a>
                                         </div>
                                     @endforeach
@@ -116,7 +116,7 @@
                     <div class="tags">
                         <h3 class="area__title">Tags</h3>
                         @foreach($anime->genres->pluck('name') as $genre)
-                            <a href="#" class="tag__btn">{{ $genre }}</a>
+                            <a href="{{ route('anime.index', ['genre' => $genre]) }}" class="tag__btn">{{ $genre }}</a>
                         @endforeach
                     </div>
                     <div class="area__head">

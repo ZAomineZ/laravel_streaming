@@ -22,17 +22,10 @@
             </div>
             <div class="col_12 col_m_4 col_l_3">
                 <div class="episodes__list">
-                    <div class="episodes scroll__custom" style="height: 494px">
-                        <div class="scroll__custom_wrap">
-                            <div class="scroll__custom_content">
-                                @foreach($anime->episodesList->pluck('episode') as $episode)
-                                    <a href="{{ route('animes.video', ['slug' => $anime->slug, 'episode' => $episode]) }}">{{ $episode }}</a>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="scroll__custom_track">
-                            <div class="scroll__bar" style="height: 32.8239%; top: 0%"></div>
-                        </div>
+                    <div class="episodes scroll__custom fakeScroll" style="height: 494px">
+                        @foreach($anime->episodesList->pluck('episode') as $episode)
+                            <a href="{{ route('animes.video', ['slug' => $anime->slug, 'episode' => $episode]) }}">{{ $episode }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -40,7 +33,7 @@
         <div class="tags">
             <h3 class="area__title">Tags</h3>
             @foreach($anime->genres->pluck('name') as $genre)
-                <a href="#" class="tag__btn">{{ $genre }}</a>
+                <a href="{{ route('anime.index', ['genre' => $genre]) }}" class="tag__btn">{{ $genre }}</a>
             @endforeach
         </div>
         <div class="area__head">
@@ -54,11 +47,11 @@
                     <div class="slider slider__horizontal slider__body row">
                         @foreach($animesRelated as $anime)
                             <div class="media__block col_12 col_m_6 col_l_3 slider__item">
-                                <a href="#" class="image" style="background-image: url('{{ $anime->cover_image }}')">
+                                <a href="{{ route('animes.video', [$anime->slug]) }}" class="image" style="background-image: url('{{ $anime->cover_image }}')">
                                     <i class="fa fa-thin fa-play"></i>
                                 </a>
                                 <div class="info">
-                                    <a href="#">
+                                    <a href={{ route('animes.video', [$anime->slug]) }}">
                                         <h3>{{ $anime->title }}</h3>
                                     </a>
                                     <a href="#">
@@ -160,4 +153,12 @@
             </li>
         </ul>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/fakeScroll.js') }}"></script>
+    <script>
+        let scrollElement = document.querySelector('.scroll__custom')
+        scrollElement.fakeScroll();
+    </script>
 @endsection

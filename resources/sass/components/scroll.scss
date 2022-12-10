@@ -3,13 +3,13 @@
     position: relative;
 }
 
-.scroll__custom_wrap {
+.fakeScroll__wrap {
     position: relative;
     z-index: 1;
     height: 100%;
     overflow: hidden;
 
-    .scroll__custom_content {
+    .fakeScroll__content {
         position: relative;
         overflow: auto;
         width: calc(100% + 18px);
@@ -18,7 +18,7 @@
     }
 }
 
-.scroll__custom_track {
+.fakeScroll__track {
     position: absolute;
     right: 0;
     top: 0;
@@ -28,7 +28,7 @@
     background-color: rgba(0, 0, 0, .5);
 }
 
-.scroll__bar {
+.fakeScroll__bar {
     position: relative;
     background: var(--secondary-color);
     width: 100%;

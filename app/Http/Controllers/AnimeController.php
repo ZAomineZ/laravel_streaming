@@ -24,9 +24,10 @@ final class AnimeController extends Controller
             ->getBySlug($slug)
             ->with('genres')
             ->first();
-        $genre = $anime->genres()->first();
+        $genre = $anime->genres->last();
         $animesRelated = $this->animeService
             ->getByGenre($genre->slug)
+            ->orderByDesc('aired_from')
             ->limit(3)
             ->get();
 
@@ -44,9 +45,10 @@ final class AnimeController extends Controller
                 $q->orderBy('episode');
             })
             ->first();
-        $genre = $anime->genres()->first();
+        $genre = $anime->genres->last();
         $animesRelated = $this->animeService
             ->getByGenre($genre->slug)
+            ->orderByDesc('aired_from')
             ->limit(4)
             ->get();
         $totalEpisodes = $anime->episodesList()->count();
