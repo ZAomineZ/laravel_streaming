@@ -17,6 +17,8 @@ interface GenreContract
 
     public function all(): Collection;
 
+    public function groupNames(): \Illuminate\Support\Collection;
+
     public function create(array $data = []): Genre;
 
     public function update(int $id, array $data = []): int;

@@ -31,6 +31,12 @@ final class GenreService implements GenreContract
         return $this->genreRepository->findAll();
     }
 
+    public function groupNames(): \Illuminate\Support\Collection
+    {
+        return $this
+            ->genreRepository->groupNames();
+    }
+
     public function create(array $data = []): Genre
     {
         return $this->genreRepository->create($data);

@@ -1,6 +1,7 @@
 @import "variables";
 
-*, *:before {
+*,
+*:before {
     box-sizing: border-box;
 }
 
@@ -21,33 +22,51 @@ body {
     position: relative;
 }
 
-article, aside, footer, header, nav, section, figcaption, figure, main {
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main {
     display: block;
 }
 
-hr, .hr {
+hr,
+.hr {
     display: block;
-    background: rgba(0, 0, 0, .15);
+    background: rgba(0, 0, 0, 0.15);
     height: 1px;
     overflow: visible;
 }
 
-button, input {
+button,
+input {
     overflow: visible;
 }
 
-button, select {
+button,
+select {
     text-transform: none;
 }
 
-button, [type=button], [type=reset], [type=submit] {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     font-family: var(--secondary-font);
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1;
     margin: 0;
 }
@@ -58,8 +77,15 @@ a {
     color: var(--primary-color);
 }
 
-a, a:hover, a:focus, a:active, button, button:hover, button:focus, button:active {
-   outline: 0 dotted transparent;
+a,
+a:hover,
+a:focus,
+a:active,
+button,
+button:hover,
+button:focus,
+button:active {
+    outline: 0 dotted transparent;
 }
 
 img {
@@ -70,37 +96,56 @@ img {
     vertical-align: middle;
 }
 
-ul, ol, dl {
+ul,
+ol,
+dl {
     display: block;
     padding: 0 0 0 15px;
     margin: auto auto 30px;
 }
 
-ul li, ol li, dl li {
-    font-size: .9375rem;
+ul li,
+ol li,
+dl li {
+    font-size: 0.9375rem;
     margin-bottom: 5px;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     font-family: var(--secondary-font);
     font-weight: var(--strong-weight);
     color: var(--headlines-color);
     margin: 0 auto;
 }
 
-h1, .h1 {
+h1,
+.h1 {
     font-size: 1.813rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
     font-size: 1.563rem;
 }
 
-h3, .h3 {
+h3,
+.h3 {
     font-size: 1.375rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
     font-size: 1.25rem;
 }
 
@@ -109,12 +154,18 @@ p {
     margin: 0 0 15px;
 }
 
-b, strong {
+b,
+strong {
     font-weight: var(--strong-weight);
 }
 
-audio, video {
+audio,
+video {
     display: inline-block;
+}
+
+select option {
+    padding: 0 0.9375rem;
 }
 
 .container,

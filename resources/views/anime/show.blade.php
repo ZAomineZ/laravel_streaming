@@ -4,9 +4,13 @@
     <div class="page__head">
         <h1>{{ $anime->title }}</h1>
         <div class="page__controls">
-            <a href="#" class="btn secondary rounded" role="button">Previous</a>
+            @if($episode != 1)
+                <a href="{{ route('animes.video', ['slug' => $anime->slug, 'episode' => $episode - 1]) }}" class="btn secondary rounded" role="button">Previous</a>
+            @endif
             <span class="btn" role="button">Episode: {{ $episode }}</span>
-            <a href="#" class="btn primary rounded" role="button">Next</a>
+            @if($episode != $totalEpisodes)
+                <a href="{{ route('animes.video', ['slug' => $anime->slug, 'episode' => $episode + 1]) }}" class="btn primary rounded" role="button">Next</a>
+            @endif
         </div>
     </div>
     <div class="container page__content">

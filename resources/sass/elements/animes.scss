@@ -64,13 +64,20 @@
     }
 
     .advanced__search .advanced__search_form {
+        display: none;
         padding: 30px 15px;
         transition: padding .3s linear;
+    }
+
+    .advanced__search .advanced__search_form.enabled {
+        display: block !important;
     }
 
     .advanced__search .advanced__search_form input:not(.btn) {
         border-radius: 52px;
     }
+
+    .advanced__search .advanced__search_form .form_control {border-radius: 52px}
 
     .advanced__search .advanced__search_form .buttons {
         display: flex;

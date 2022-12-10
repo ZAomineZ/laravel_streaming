@@ -3,10 +3,18 @@
 namespace App\Models\Attributes;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait AnimeAttributes
 {
+    public static array $formats = [
+        "Movie" => "movie",
+        "Ona" => "ona",
+        "Ova" => "ova",
+        "Special" => "special",
+        "Tv" => "tv",
+        "Tv Short" => 'tv_short'
+    ];
+
     public function year(string $field = "aired_from"): string|int
     {
         $carbon = new Carbon($this->{$field});
