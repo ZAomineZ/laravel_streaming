@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('anime.index') }}">
                         Online Anime
                     </a>
                 </li>

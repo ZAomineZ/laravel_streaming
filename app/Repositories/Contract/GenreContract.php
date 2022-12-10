@@ -33,6 +33,13 @@ interface GenreContract
     public function findAll(): Collection;
 
     /**
+     * Group by names.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function groupNames(): \Illuminate\Support\Collection;
+
+    /**
      * Create new resource.
      *
      * @param array $data

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\AnimeFilterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)
     ->name('home');
-Route::get('/animes', [AnimeController::class, 'index'])
+Route::get('/animes', AnimeFilterController::class)
     ->name('anime.index');
 Route::get('/anime/{slug}/details', [AnimeController::class, 'details'])
     ->name('anime.details');

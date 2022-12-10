@@ -23,4 +23,12 @@ final class GenreRepository extends BaseRepository implements GenreContract
             ->where('name', '=', $name)
             ->first();
     }
+
+    public function groupNames(): \Illuminate\Support\Collection
+    {
+        return $this->genre
+            ->groupBy('id', 'name')
+            ->get()
+            ->map(fn(Genre $genre) => $genre->name);
+    }
 }

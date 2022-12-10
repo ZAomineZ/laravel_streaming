@@ -13,19 +13,9 @@ use Illuminate\Http\Request;
 final class AnimeController extends Controller
 {
     public function __construct(
-        protected AnimeService $animeService
+        protected AnimeService $animeService,
     )
     {
-    }
-
-    public function index(): Factory|View|Application
-    {
-        $animes = $this->animeService
-            ->getTopRated()
-            ->limit(16)
-            ->get();
-
-        return view('anime.index', compact('animes'));
     }
 
     public function details(string $slug): Factory|View|Application
@@ -59,7 +49,8 @@ final class AnimeController extends Controller
             ->getByGenre($genre->slug)
             ->limit(4)
             ->get();
+        $totalEpisodes = $anime->episodesList()->count();
 
-        return view('anime.show', compact('anime', 'animesRelated', 'episode'));
+        return view('anime.show', compact('anime', 'animesRelated', 'episode', 'totalEpisodes'));
     }
 }

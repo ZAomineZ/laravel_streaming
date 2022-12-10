@@ -44,9 +44,58 @@ final class AnimeService implements AnimeContract
         return $this->animeRepository->findByGenre($slugGenre);
     }
 
+    public function getByGenreName(?string $genreName = null, ?Builder $builder = null): Builder
+    {
+        return $this->animeRepository->findByGenreName($genreName);
+    }
+
+    public function getByFormat(?string $format = null, ?Builder $builder = null): Builder
+    {
+        return $this->animeRepository->findByFormat($format, $builder);
+    }
+
+    public function getByStatus(?string $status = null, ?Builder $builder = null): Builder
+    {
+        return $this->animeRepository->findByStatus($status, $builder);
+    }
+
+    public function getByYear(string $year, ?Builder $builder = null)
+    {
+        return $this->animeRepository->findByYear($year, $builder);
+    }
+
+    public function getSearch(string $search, ?Builder $queryBuilder = null): Builder
+    {
+        return $this->animeRepository->findSearch($search, $queryBuilder);
+    }
+
     public function latestAnimes(string $format = AnimeFormat::TV): Builder
     {
         return $this->animeRepository->latestAnimes($format);
+    }
+
+    public function groupYears(): \Illuminate\Support\Collection
+    {
+        return $this->animeRepository->groupYears();
+    }
+
+    public function sortTitle(?Builder $builder, string $direction = 'ASC'): Builder
+    {
+        return $this->animeRepository->sortTitle($builder, $direction);
+    }
+
+    public function sortScore(?Builder $builder, string $direction = 'ASC'): Builder
+    {
+        return $this->animeRepository->sortScore($builder, $direction);
+    }
+
+    public function sortLatest(?Builder $builder): Builder
+    {
+        return $this->animeRepository->sortLatest($builder);
+    }
+    public function sortStartLetterTitle(?Builder $builder, string $letter): Builder
+    {
+        return $this->animeRepository->sortStartLetterTitle($builder, $letter);
     }
 
     public function all(): Collection

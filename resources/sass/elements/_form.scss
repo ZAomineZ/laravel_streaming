@@ -1,5 +1,6 @@
 .form__ui input:not(.btn),
-.form__ui textarea {
+.form__ui textarea,
+.form_control {
     background-color: #ffffff;
     color: var(--typography-color);
     margin-bottom: var(--form-gutter);
@@ -13,12 +14,14 @@
     padding-left: var(--form-padding);
 }
 
-.form__ui input:not([class*=col-]):not(.btn),
-.form__ui textarea:not([class*=col_]) {
+.form__ui input:not([class*="col-"]):not(.btn),
+.form__ui textarea:not([class*="col_"]),
+.form_control:not([class*="col-"]) {
     width: 100%;
 }
 
-.form__ui.large input:not(.btn) {
+.form__ui.large input:not(.btn),
+.form_control.large {
     height: var(--form-height);
     padding-right: var(--form-padding-large);
     padding-left: var(--form-padding-large);
@@ -28,4 +31,68 @@
     height: var(--form-height);
     padding: calc(var(--form-padding) / 1.5) var(--form-padding);
     line-height: var(--line-height);
+}
+
+.select__custom {
+    color: var(--typography-color);
+    position: relative;
+    margin-bottom: var(--form-gutter);
+    text-align: left;
+
+    .select__custom_option {
+        cursor: pointer;
+        margin-bottom: 0;
+        line-height: calc(var(--form-height) - 9px);
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .select__custom_option.large {
+        line-height: calc(var(--form-height-large) - 9px);
+    }
+
+    .select__custom_icon {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 10px;
+        text-align: center;
+        line-height: var(--form-height);
+    }
+
+    .select__custom_option.large + .select__custom_icon {
+        line-height: calc(var(--form-height-large) - 9px);
+    }
+
+    .select__custom_icon svg {
+        display: inline-block;vertical-align: middle;
+    }
+
+    .select__custom_options_list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99999;
+        background: #FFFFFF;
+        border: var(--form-border);
+        border-radius: var(--form-radius);
+        max-height: 280px;
+        overflow-y: auto;
+    }
+
+    .select__custom_options_list:hover, .select__custom_options_list.active {
+        display: block;
+    }
+
+    .select__custom_options_list li {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-bottom: 0;
+        cursor: pointer;
+        list-style: none;
+    }
 }
