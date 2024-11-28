@@ -14,9 +14,7 @@ final class AnimeController extends Controller
 {
     public function __construct(
         protected AnimeService $animeService,
-    )
-    {
-    }
+    ) {}
 
     public function details(string $slug): Factory|View|Application
     {

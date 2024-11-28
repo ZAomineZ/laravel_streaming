@@ -21,9 +21,7 @@ final class NekoSamaAnime
         protected AnimeService $animeService,
         protected GenreService $genreService,
         protected EpisodeService $episodeService
-    )
-    {
-    }
+    ) {}
 
     /**
      * @throws Exception
